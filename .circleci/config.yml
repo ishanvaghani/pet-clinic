@@ -26,9 +26,13 @@ jobs:
       - run:
           name: Test
           command: mvn test
+
+      - checkout:
+          path: ~/pet-clinic-data
+
       - run:
-          name: Test
-          command: ./pet-clinic-data/src mvn test
+          name: Pet Clinic Data Test
+          command: mvn test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
